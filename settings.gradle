@@ -1,0 +1,2 @@
+include ':ManrajAssign22'
+rootProject.name = "ManrajAssign2"
