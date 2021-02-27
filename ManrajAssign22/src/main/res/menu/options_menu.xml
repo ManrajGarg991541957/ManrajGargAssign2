@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/help"
+        android:title="Help">
+    </item>
+    <item
+        android:id="@+id/pizza1"
+        android:title="Pizza"
+        android:icon="@drawable/pizzapizza"
+        app:showAsAction="always"
+        android:orderInCategory="1">
+    </item>
+    <item
+        android:id="@+id/pizza2"
+        android:title="Pizza"
+        android:icon="@drawable/dominos"
+        app:showAsAction="always"
+        android:orderInCategory="2">
+    </item>
+    <item
+        android:id="@+id/pizza3"
+        android:title="Pizza"
+        android:icon="@drawable/littleceasers"
+        app:showAsAction="always"
+        android:orderInCategory="3">
+    </item>
+    <item
+        android:id="@+id/custom"
+        android:title="Manraj"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="4">
+    </item>
+
+</menu>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GargActivity1">
+
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/selectedStore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:width="120dp"
+                android:text="Select Pizza Type:" />
+
+            <RadioGroup
+                android:id="@+id/typeGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <RadioButton
+                    android:id="@+id/radio_thin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thin Crust" />
+
+                <RadioButton
+                    android:id="@+id/radio_thick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thick Crust" />
+
+                <RadioButton
+                    android:id="@+id/radio_welldone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Well Done" />
+
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="Select Pizza Size" />
+
+            <RadioGroup
+                android:id="@+id/sizeGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <RadioButton
+                    android:id="@+id/radio_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Small" />
+
+                <RadioButton
+                    android:id="@+id/radio_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medium" />
+
+                <RadioButton
+                    android:id="@+id/radio_large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Large" />
+
+                <RadioButton
+                    android:id="@+id/radio_xlarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extra Large" />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="Select Toppings" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/pep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pepperoni" />
+
+            <CheckBox
+                android:id="@+id/mush"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mushrooms" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/gp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Green Peppers" />
+
+            <CheckBox
+                android:id="@+id/onion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Onion" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/tomato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tomato" />
+
+            <CheckBox
+                android:id="@+id/chicken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chicken" />
+
+        </TableRow>
+
+        <Button
+            android:id="@+id/btnActivity"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:text="Next" />
+
+    </TableLayout>
+</LinearLayout>

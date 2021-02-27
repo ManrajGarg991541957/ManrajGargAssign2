@@ -37,5 +37,7 @@
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
-        android:text="Next"/>
+        android:text="Next"
+        android:onClick="callIntent"
+        />
 </RelativeLayout>
