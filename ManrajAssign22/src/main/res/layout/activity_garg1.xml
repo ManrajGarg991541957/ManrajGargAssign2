@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Manraj Garg s991541957
+This is assignment 2 it is a pizza ordering application built for android devices
+ -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".GargActivity1">
 
 
@@ -14,13 +19,13 @@
         <TableRow>
 
             <TextView
-                android:id="@+id/selectedStore"
+                android:id="@+id/manrajSelectedStore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15dp" />
 
             <ImageView
-                android:id="@+id/image1"
+                android:id="@+id/manrajImage1"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
         </TableRow>
@@ -32,25 +37,25 @@
                 android:text="Select Pizza Type:" />
 
             <RadioGroup
-                android:id="@+id/typeGroup"
+                android:id="@+id/manrajTypeGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true">
 
                 <RadioButton
-                    android:id="@+id/radio_thin"
+                    android:id="@+id/manrajRadio_thin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thin Crust" />
 
                 <RadioButton
-                    android:id="@+id/radio_thick"
+                    android:id="@+id/manrajRadio_thick"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thick Crust" />
 
                 <RadioButton
-                    android:id="@+id/radio_welldone"
+                    android:id="@+id/manrajRadio_welldone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Well Done" />
@@ -63,31 +68,31 @@
             <TextView android:text="Select Pizza Size" />
 
             <RadioGroup
-                android:id="@+id/sizeGroup"
+                android:id="@+id/manrajSizeGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true">
 
                 <RadioButton
-                    android:id="@+id/radio_small"
+                    android:id="@+id/manrajRadio_small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Small" />
 
                 <RadioButton
-                    android:id="@+id/radio_medium"
+                    android:id="@+id/manrajRadio_medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Medium" />
 
                 <RadioButton
-                    android:id="@+id/radio_large"
+                    android:id="@+id/manrajRadio_large"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Large" />
 
                 <RadioButton
-                    android:id="@+id/radio_xlarge"
+                    android:id="@+id/manrajRadio_xlarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Extra Large" />
@@ -98,17 +103,16 @@
 
             <TextView android:text="Select Toppings" />
         </TableRow>
-
         <TableRow>
 
             <CheckBox
-                android:id="@+id/pep"
+                android:id="@+id/manrajPep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pepperoni" />
 
             <CheckBox
-                android:id="@+id/mush"
+                android:id="@+id/manrajMush"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mushrooms" />
@@ -117,13 +121,13 @@
         <TableRow>
 
             <CheckBox
-                android:id="@+id/gp"
+                android:id="@+id/manrajGp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Green Peppers" />
 
             <CheckBox
-                android:id="@+id/onion"
+                android:id="@+id/manrajOnion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Onion" />
@@ -132,13 +136,13 @@
         <TableRow>
 
             <CheckBox
-                android:id="@+id/tomato"
+                android:id="@+id/manrajTomato"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tomato" />
 
             <CheckBox
-                android:id="@+id/chicken"
+                android:id="@+id/manrajChicken"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chicken" />
@@ -146,10 +150,11 @@
         </TableRow>
 
         <Button
-            android:id="@+id/btnActivity"
+            android:id="@+id/manrajBtnActivity"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:text="Next" />
+            android:text="Next"
+            android:onClick="paymentScreen"/>
 
     </TableLayout>
 </LinearLayout>

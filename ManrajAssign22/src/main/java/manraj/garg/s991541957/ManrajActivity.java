@@ -1,11 +1,13 @@
-package manraj.garg.s991541957;
 /*
 Manraj Garg s991541957
-This is assignment 2
+This is assignment 2 it is a pizza ordering application built for android devices
  */
+package manraj.garg.s991541957;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -39,6 +41,7 @@ public class ManrajActivity extends AppCompatActivity {
         return true;
     }
 
+
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         Intent intent = null;
@@ -46,34 +49,34 @@ public class ManrajActivity extends AppCompatActivity {
             case R.id.help:
 
                 Context context = getApplicationContext();
-                CharSequence text = "www.google.ca";
+                CharSequence text = getString(R.string.google);
                 int duration = Toast.LENGTH_LONG;
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
 
                 intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://www.google.ca"));
+                        Uri.parse(getString(R.string.google1)));
                 startActivity(intent);
                 break;
             case R.id.pizza1:
                 intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://www.pizzapizza.ca"));
+                        Uri.parse(getString(R.string.PizzaPizza)));
                 startActivity(intent);
                 break;
             case R.id.pizza2:
                 intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://www.dominos.ca"));
+                        Uri.parse(getString(R.string.Dominos)));
                 startActivity(intent);
                 break;
             case R.id.pizza3:
                 intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://www.littlecaesars.ca"));
+                        Uri.parse(getString(R.string.LittleCaesars)));
                 startActivity(intent);
                 break;
             case R.id.custom:
                 intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("http://www.bigboxpizza.ca"));
+                        Uri.parse(getString(R.string.BigBox)));
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
@@ -83,37 +86,37 @@ public class ManrajActivity extends AppCompatActivity {
 
     public void callIntent(View view) {
 
-        RadioGroup group = (RadioGroup)findViewById(R.id.radioGroup);
+        RadioGroup group = (RadioGroup)findViewById(R.id.manrajRadioGroup);
 
         Intent intent = null;
         // Check which radio button was clicked
         switch (view.getId()) {
-            case R.id.nextBtn:
-                if(group.getCheckedRadioButtonId() == R.id.radio_pizza)
+            case R.id.manrajNextBtn:
+                if(group.getCheckedRadioButtonId() == R.id.manrajRadio_pizza)
                 {
                     intent = new Intent(this, GargActivity1.class);
-                    TextView textView = (TextView) findViewById(R.id.radio_pizza);
+                    TextView textView = (TextView) findViewById(R.id.manrajRadio_pizza);
                     String message =textView.getText().toString();
                     intent.putExtra(msg, message);
-                    intent.putExtra("imageView", R.drawable.pizzapizza);
+                    intent.putExtra(getString(R.string.imageView), R.drawable.pizzapizza);
                     startActivity(intent);
                 }
-                else if(group.getCheckedRadioButtonId() == R.id.radio_dominos)
+                else if(group.getCheckedRadioButtonId() == R.id.manrajRadio_dominos)
                 {
                     intent = new Intent(this, GargActivity1.class);
-                    TextView textView = (TextView) findViewById(R.id.radio_dominos);
+                    TextView textView = (TextView) findViewById(R.id.manrajRadio_dominos);
                     String message =textView.getText().toString();
                     intent.putExtra(msg, message);
-                    intent.putExtra("imageView", R.drawable.dominos);
+                    intent.putExtra(getString(R.string.imageView), R.drawable.dominos);
                     startActivity(intent);
                 }
                 else
                 {
                     intent = new Intent(this, GargActivity1.class);
-                    TextView textView = (TextView) findViewById(R.id.radio_ceasars);
+                    TextView textView = (TextView) findViewById(R.id.manrajRadio_ceasars);
                     String message =textView.getText().toString();
                     intent.putExtra(msg, message);
-                    intent.putExtra("imageView", R.drawable.littleceasers);
+                    intent.putExtra(getString(R.string.imageView), R.drawable.littleceasers);
                     startActivity(intent);
                 }
             default:

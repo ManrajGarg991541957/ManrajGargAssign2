@@ -1,3 +1,7 @@
+/*
+Manraj Garg s991541957
+This is assignment 2 it is a pizza ordering application built for android devices
+ */
 package manraj.garg.s991541957;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +22,8 @@ import java.util.ArrayList;
 
 public class GargActivity2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,24 +31,25 @@ public class GargActivity2 extends AppCompatActivity implements AdapterView.OnIt
 
         Intent intent = getIntent();
 
-        String message = intent.getStringExtra(GargActivity1.msg);
+        String message = intent.getStringExtra("msg");
         TextView textView = findViewById(R.id.manrajSelectedSize);
         textView.setText(message);
 
-        String message2 = intent.getStringExtra(GargActivity1.msg2);
+        String message2 = intent.getStringExtra("msg2");
         TextView textView2 = findViewById(R.id.manrajSelectedStyle);
         textView2.setText(message2);
-
 
         textView = findViewById(R.id.manrajSelectedToppings);
         ArrayList<String> numbersList = (ArrayList<String>) getIntent().getSerializableExtra("toppings");
         textView.setText(String.valueOf(numbersList));
 
-        Spinner spinner = findViewById(R.id.manrajSpinner);
+        spinner = findViewById(R.id.manrajSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.provinces, android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -57,34 +64,32 @@ public class GargActivity2 extends AppCompatActivity implements AdapterView.OnIt
     }
 
     public void CheckOutScreen(View view) {
-        Intent intent = null;
+        Intent intent = new Intent(this, GargActivity3.class);
         EditText nameText = (EditText)findViewById(R.id.manrajETName);
         EditText creditText = (EditText)findViewById(R.id.manrajETCredit);
         EditText addressText = (EditText)findViewById(R.id.manrajETAddress);
         EditText phoneText = (EditText)findViewById(R.id.manrajETPhone);
+        TextView selectedTextView = (TextView)spinner.getSelectedView();
 
+        final String selectedProvince = selectedTextView.getText().toString();
         final String name = nameText.getText().toString();
         final String credit = creditText.getText().toString();
         final String phone = phoneText.getText().toString();
         final String address = addressText.getText().toString();
 
-        if (validName(nameText))
+        if (validName(nameText) && validCredit(creditText) && validPhone(phoneText) && validAddress(addressText))
         {
-            getIntent().putExtra("nameText", name);
+            intent.putExtra("nameText", name);
+            intent.putExtra("creditText", credit);
+            intent.putExtra("phoneText", phone);
+            intent.putExtra("addressText", address);
+            intent.putExtra("selectedProvince", selectedProvince);
+            intent.putExtra("topping", getIntent().getSerializableExtra("toppings"));
+            intent.putExtra("size", getIntent().getStringExtra("msg"));
+            intent.putExtra("type", getIntent().getStringExtra("msg2"));
+            startActivity(intent);
         }
-        if(validCredit(creditText))
-        {
-            getIntent().putExtra("creditText", credit);
-        }
-        if(validPhone(phoneText))
-        {
-            getIntent().putExtra("phoneText", phone);
-        }
-        if(validAddress(addressText))
-        {
-            getIntent().putExtra("addressText", address);
-        }
-        startActivity(intent);
+
     }
 
     public boolean validName(EditText editTextName) {
@@ -92,11 +97,14 @@ public class GargActivity2 extends AppCompatActivity implements AdapterView.OnIt
         String name = editTextName.getText().toString();
         //validate name input
         if (name.length() == 0) {
-            editTextName.setError("This Field cannot be blank");
+            editTextName.setError(getString(R.string.blankField));
+            return false;
         } else if (name.length() < 3 || name.length() > 20) {
-            editTextName.setError("Name must be between 3-20 characters");
+            editTextName.setError(getString(R.string.error1));
+            return false;
         } else if (!name.matches("[a-zA-Z]+")) {
-            editTextName.setError("Name should only contain alphebetical characters");
+            editTextName.setError(getString(R.string.error2));
+            return false;
         }
             return true;
     }
@@ -107,11 +115,14 @@ public class GargActivity2 extends AppCompatActivity implements AdapterView.OnIt
         String credit = editTextCredit.getText().toString();
         //validate credit input
         if (credit.length() == 0) {
-            editTextCredit.setError("This Field cannot be blank");
-        } else if (credit.length() == 16) {
-            editTextCredit.setError("Credit card must contain only numbers and be 16 digits long");
+            editTextCredit.setError(getString(R.string.blankField));
+            return false;
+        } else if (credit.length() != 16) {
+            editTextCredit.setError(getString(R.string.error5));
+            return false;
         } else if (!credit.matches("^[0-9]*$")) {
-            editTextCredit.setError("Credit card must contain only numbers");
+            editTextCredit.setError(getString(R.string.error6));
+            return false;
         }
         return true;
     }
@@ -121,7 +132,8 @@ public class GargActivity2 extends AppCompatActivity implements AdapterView.OnIt
         editTextAddress = (EditText) findViewById(R.id.manrajETAddress);
         //validate address input
         if (editTextAddress.getText().toString().length() == 0) {
-            editTextAddress.setError("This Field cannot be blank");
+            editTextAddress.setError(getString(R.string.blankField));
+            return false;
         }
         return true;
     }
@@ -131,11 +143,14 @@ public class GargActivity2 extends AppCompatActivity implements AdapterView.OnIt
         editTextPhone = (EditText) findViewById(R.id.manrajETPhone);
         //validate phone input
         if (editTextPhone.getText().toString().length() == 0) {
-            editTextPhone.setError("This Field cannot be blank");
+            editTextPhone.setError(getString(R.string.blankField));
+            return false;
         } else if (editTextPhone.getText().toString().length() != 10) {
-            editTextPhone.setError("Phone must be 10 characters in length");
+            editTextPhone.setError(getString(R.string.error3));
+            return false;
         } else if (!editTextPhone.getText().toString().matches("^[0-9]*$")) {
-            editTextPhone.setError("Phone number must contain only numbers");
+            editTextPhone.setError(getString(R.string.error4));
+            return false;
         }
         return true;
     }

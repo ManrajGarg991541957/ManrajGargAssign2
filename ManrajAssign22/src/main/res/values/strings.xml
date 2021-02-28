@@ -1,3 +1,46 @@
+<!--
+Manraj Garg s991541957
+This is assignment 2 it is a pizza ordering application built for android devices
+ -->
 <resources>
     <string name="app_name">ManrajAssign2</string>
+    <string name="Chicken">Chicken</string>
+    <string name="Tomato">Tomato</string>
+    <string name="google">www.google.ca</string>
+    <string name="google1">https://www.google.ca</string>
+    <string name="PizzaPizza">https://www.pizzapizza.ca</string>
+    <string name="Dominos">https://www.dominos.ca</string>
+    <string name="LittleCaesars">https://www.littlecaesars.ca</string>
+    <string name="BigBox">http://www.bigboxpizza.ca</string>
+    <string name="imageView">imageView</string>
+    <string name="Onion">Onion</string>
+    <string name="Mushroom">Mushroom</string>
+    <string name="GreenPeppers">Green Peppers</string>
+    <string name="Pep">Pepperoni</string>
+    <string name="alertTitle">Please pick pizza type, pizza size and at least 1 topping</string>
+    <string name="alertPart1">Your confirmation number is 5</string>
+    <string name="alertPart2">\"The current time is: \"</string>
+    <string name="alertPart3">your order will be ready in 20 minutes</string>
+    <string name="blankField">This Field cannot be blank</string>
+    <string name="error1">Name must be between 3-20 characters</string>
+    <string name="error2">Name should only contain alphebetical characters</string>
+    <string name="error3">Phone must be 10 characters in length</string>
+    <string name="error4">Phone number must contain only numbers</string>
+    <string name="error5">Credit card must contain only numbers and be 16 digits long</string>
+    <string name="error6">Credit card must contain only numbers</string>
+    <string name="returnHome">Click OK to return to home page</string>
+
+    <string-array name="provinces">
+        <item>Alberta</item>
+        <item>British Columbia</item>
+        <item>New Brunswick</item>
+        <item>Newfoundland and Labrador</item>
+        <item>Nova Scotia</item>
+        <item>Prince Edward Island</item>
+        <item>Saskatchewan</item>
+        <item>Manitoba</item>
+        <item>Ontario</item>
+        <item>Quebec</item>
+    </string-array>
+    <color name="blue">#ADD8E6</color>
 </resources>

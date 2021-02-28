@@ -1,9 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+Manraj Garg s991541957
+This is assignment 2 it is a pizza ordering application built for android devices
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GargActivity2">
+    tools:context=".GargActivity2"
+    android:background="@color/blue"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TableRow>
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Toppings: " />
+
+        <TextView
+            android:id="@+id/manrajSelectedToppings"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="15dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Size: " />
+            <TextView
+                android:id="@+id/manrajSelectedSize"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="15dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Style: " />
+            <TextView
+                android:id="@+id/manrajSelectedStyle"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="15dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:id="@+id/manrajETName"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Enter Your Name" />
+        </TableRow>
+        <TableRow>
+
+            <EditText
+                android:id="@+id/manrajETCredit"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Enter Your Credit Card Number" />
+        </TableRow>
+        <TableRow>
+
+            <EditText
+                android:id="@+id/manrajETAddress"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Enter Your Address" />
+        </TableRow>
+        <TableRow>
+            <EditText
+                android:id="@+id/manrajETPhone"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Enter Your Phone Number" />
+        </TableRow>
+        <TableRow>
+            <Spinner
+                android:id="@+id/manrajSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/provinces" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/manrajOrderButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="Order"
+                android:onClick="CheckOutScreen"/>
+        </TableRow>
+    </TableLayout>
+
+
+</LinearLayout>
