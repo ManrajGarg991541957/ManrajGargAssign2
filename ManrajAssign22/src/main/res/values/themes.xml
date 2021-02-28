@@ -1,4 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+Manraj Garg s991541957
+This is assignment 2 it is a pizza ordering application built for android devices
+ -->
     <!-- Base application theme. -->
     <style name="Theme.ManrajAssign2" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
